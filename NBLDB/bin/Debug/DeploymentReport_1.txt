@@ -1,0 +1,50 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       [dbo].[tblCustomer]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[tblCustomer].[Genre] is being dropped, data loss could occur.
+       The column [dbo].[tblCustomer].[JoinDate] is being dropped, data loss could occur.
+       The column [dbo].[tblCustomer].[NationalIdNumber] is being dropped, data loss could occur.
+       The column [dbo].[tblCustomer].[Region] is being dropped, data loss could occur.
+       The column [dbo].[tblCustomer].[UpdateDate] is being dropped, data loss could occur.
+       The column [dbo].[tblCustomer].[UpdatedBy] is being dropped, data loss could occur.
+       The column [dbo].[tblCustomer].[City] on table [dbo].[tblCustomer] must be added, but the column has no default value
+         and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+       The column [dbo].[tblCustomer].[State] on table [dbo].[tblCustomer] must be added, but the column has no default value
+         and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+
+** User actions
+     Recreate table
+       [dbo].[tblCustomer] (Table)
+     Create
+       [dbo].[tblLoan] (Table)
+       [dbo].[tblPayment] (Table)
+       [dbo].[DF_tblLoan_CreateDate] (Default Constraint)
+       [dbo].[DF_tblLoan_CreatedBy] (Default Constraint)
+       [dbo].[DF_tblPayment_CreateDate] (Default Constraint)
+       [dbo].[DF_tblPayment_CreatedBy] (Default Constraint)
+       [dbo].[FK_tblLoan_tblCustomer_CustomerId] (Foreign Key)
+       [dbo].[FK_tblLoan_tblPayment_Loanumber] (Foreign Key)
+
+** Supporting actions
+     Drop
+       [dbo].[DF_tblCustomer_CreateDate] (Default Constraint)
+       [dbo].[DF_tblCustomer_CreatedBy] (Default Constraint)
+
+The column [dbo].[tblCustomer].[Genre] is being dropped, data loss could occur.
+The column [dbo].[tblCustomer].[JoinDate] is being dropped, data loss could occur.
+The column [dbo].[tblCustomer].[NationalIdNumber] is being dropped, data loss could occur.
+The column [dbo].[tblCustomer].[Region] is being dropped, data loss could occur.
+The column [dbo].[tblCustomer].[UpdateDate] is being dropped, data loss could occur.
+The column [dbo].[tblCustomer].[UpdatedBy] is being dropped, data loss could occur.
+The column [dbo].[tblCustomer].[City] on table [dbo].[tblCustomer] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The column [dbo].[tblCustomer].[State] on table [dbo].[tblCustomer] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+

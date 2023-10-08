@@ -1,0 +1,14 @@
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\bin\Debug\net6.0\NBL.BPA.Service.exe
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\bin\Debug\net6.0\NBL.BPA.Service.deps.json
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\bin\Debug\net6.0\NBL.BPA.Service.runtimeconfig.json
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\bin\Debug\net6.0\NBL.BPA.Service.dll
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\bin\Debug\net6.0\NBL.BPA.Service.pdb
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\obj\Debug\net6.0\NBL.BPA.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\obj\Debug\net6.0\NBL.BPA.Service.AssemblyInfoInputs.cache
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\obj\Debug\net6.0\NBL.BPA.Service.AssemblyInfo.cs
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\obj\Debug\net6.0\NBL.BPA.Service.csproj.CoreCompileInputs.cache
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\obj\Debug\net6.0\NBL.BPA.Service.dll
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\obj\Debug\net6.0\refint\NBL.BPA.Service.dll
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\obj\Debug\net6.0\NBL.BPA.Service.pdb
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\obj\Debug\net6.0\NBL.BPA.Service.genruntimeconfig.cache
+C:\Users\mnproduser\source\repos\NBL.BPA\NBL.BPA.Service\obj\Debug\net6.0\ref\NBL.BPA.Service.dll

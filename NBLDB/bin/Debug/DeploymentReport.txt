@@ -1,0 +1,25 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[tblCustomer] (Table)
+       [dbo].[tblLoan] (Table)
+       [dbo].[tblPayment] (Table)
+       [dbo].[DF_tblCustomer_CreateDate] (Default Constraint)
+       [dbo].[DF_tblCustomer_CreatedBy] (Default Constraint)
+       [dbo].[DF_tblLoan_CreateDate] (Default Constraint)
+       [dbo].[DF_tblLoan_CreatedBy] (Default Constraint)
+       [dbo].[DF_tblPayment_CreateDate] (Default Constraint)
+       [dbo].[DF_tblPayment_CreatedBy] (Default Constraint)
+       [dbo].[FK_tblLoan_tblCustomer_CustomerId] (Foreign Key)
+       [dbo].[FK_tblLoan_tblPayment_Loanumber] (Foreign Key)
+
+** Supporting actions

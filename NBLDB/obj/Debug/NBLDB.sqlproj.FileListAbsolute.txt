@@ -1,0 +1,6 @@
+C:\Users\mnproduser\source\repos\NBL.BPA\NBLDB\bin\Debug\NBLDB.dacpac
+C:\Users\mnproduser\source\repos\NBL.BPA\NBLDB\bin\Debug\NBLDB.dll
+C:\Users\mnproduser\source\repos\NBL.BPA\NBLDB\bin\Debug\NBLDB.pdb
+C:\Users\mnproduser\source\repos\NBL.BPA\NBLDB\obj\Debug\NBLDB.sqlproj.AssemblyReference.cache
+C:\Users\mnproduser\source\repos\NBL.BPA\NBLDB\obj\Debug\NBLDB.dll
+C:\Users\mnproduser\source\repos\NBL.BPA\NBLDB\obj\Debug\NBLDB.pdb
