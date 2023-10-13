@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NBL.BPA.Domain.Entities
 {
-    public class Payment
+    public class Payment : BaseEntity
     {
         public string LoanNumber { get; set; }
         public DateTime DueDate { get; set; }

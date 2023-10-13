@@ -10,6 +10,7 @@ namespace NBL.BPA.Data
     public interface IRepository
     {
         Task AddCustomer(Customer customer);
+        Task Addloan(Loan loan, string custId);
         Task<Customer> GetCustomerById(string id);
         // Task<Customer> GetCustomerDa
 

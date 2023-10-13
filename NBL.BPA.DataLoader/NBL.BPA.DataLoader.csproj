@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NBL.BPA.Data\NBL.BPA.Data.csproj" />
+  </ItemGroup>
+
 </Project>

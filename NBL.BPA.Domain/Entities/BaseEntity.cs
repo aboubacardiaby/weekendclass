@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NBL.BPA.Domain.Entities
 {
-    internal class BaseEntity
+    public class BaseEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }

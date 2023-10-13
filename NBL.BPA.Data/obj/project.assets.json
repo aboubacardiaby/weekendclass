@@ -2910,19 +2910,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mnproduser\\.nuget\\packages\\": {}
+    "C:\\Users\\adiaby\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mnproduser\\source\\repos\\NBL.BPA\\NBL.BPA.Data\\NBL.BPA.Data.csproj",
+      "projectUniqueName": "C:\\Users\\adiaby\\source\\class\\weekendclass\\NBL.BPA.Data\\NBL.BPA.Data.csproj",
       "projectName": "NBL.BPA.Data",
-      "projectPath": "C:\\Users\\mnproduser\\source\\repos\\NBL.BPA\\NBL.BPA.Data\\NBL.BPA.Data.csproj",
-      "packagesPath": "C:\\Users\\mnproduser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mnproduser\\source\\repos\\NBL.BPA\\NBL.BPA.Data\\obj\\",
+      "projectPath": "C:\\Users\\adiaby\\source\\class\\weekendclass\\NBL.BPA.Data\\NBL.BPA.Data.csproj",
+      "packagesPath": "C:\\Users\\adiaby\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\adiaby\\source\\class\\weekendclass\\NBL.BPA.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mnproduser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\adiaby\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2930,14 +2930,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/owens-minor-commercial/_packaging/sharedapi%40Local/nuget/v3/index.json": {},
+        "https://pkgs.dev.azure.com/owens-minor-commercial/_packaging/sharedapi/nuget/v2/": {},
+        "https://www.nuget.org/api/v2": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\mnproduser\\source\\repos\\NBL.BPA\\NBL.BPA.Domain\\NBL.BPA.Domain.csproj": {
-              "projectPath": "C:\\Users\\mnproduser\\source\\repos\\NBL.BPA\\NBL.BPA.Domain\\NBL.BPA.Domain.csproj"
+            "C:\\Users\\adiaby\\source\\class\\weekendclass\\NBL.BPA.Domain\\NBL.BPA.Domain.csproj": {
+              "projectPath": "C:\\Users\\adiaby\\source\\class\\weekendclass\\NBL.BPA.Domain\\NBL.BPA.Domain.csproj"
             }
           }
         }
@@ -2993,7 +2996,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

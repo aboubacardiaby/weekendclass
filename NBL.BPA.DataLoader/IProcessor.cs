@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NBL.BPA.DataLoader
 {
-    internal interface IProcessor
+    public interface IProcessor
     {
         public void LoadData(string path);
         public void Process(byte[] data);

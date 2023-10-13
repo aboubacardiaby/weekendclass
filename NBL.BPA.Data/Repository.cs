@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using NBL.BPA.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -18,40 +19,97 @@ namespace NBL.BPA.Data
         }
         public async Task AddCustomer(Customer customer)
         {
-            bool IsCustomerExist = false;
-
-            Customer customerfromDb = await _context.tblCustomer.FindAsync(customer.CustId);
-
-            if (customerfromDb != null)
-            {
-                IsCustomerExist = true;
-            }
-            else
-            {
-                customerfromDb = new Customer();
-            }
 
             try
             {
 
-                await _context.Database.ExecuteSqlInterpolatedAsync($"Usp_AddOrEditCustomer  @CustId ={customer.CustId}, @FirstName ={customer.FirstName}, @LastName ={customer.LastName}, @Genre= {customer.Genre},@Email ={customer.Email}, @PhoneNumber = {customer.PhoneNumber},@Address = {customer.Address},@Region ={customer.Region}, @NationalIdNumber = {customer.NationalIdNumber}, @JoinDate={customer.JoinDate}");
+                object[] paramItems = new object[]
+                   {
+                        new SqlParameter("@CustId", customer.CustId),
+                        new SqlParameter("@FirstName", customer.FirstName),
+                        new SqlParameter("@LastName", customer.LastName),
+                        new SqlParameter("@Email", customer.Email),
+                        new SqlParameter("@PhoneNumber", customer.PhoneNumber),
+                        new SqlParameter("@Address", customer.Address),
+                        new SqlParameter("@City", customer.City),
+                        new SqlParameter("@State", customer.State),
+                    };
 
-                //if (IsCustomerExist)
-                //{
-                //    _context.tblCustomer.Update(customerfromDb);
-                //}
-                //else
-                //{
-                //  await   _context.tblCustomer.AddAsync(customer);
-                //}
-                //await _context.SaveChangesAsync();
+
+                _context.Database.ExecuteSqlRaw(@"INSERT INTO tblCustomer
+                                                               ([CustId]
+                                                               ,[FirstName]
+                                                               ,[LastName]
+                                                               ,[Email]
+                                                               ,[PhoneNumber]
+                                                               ,[Address]
+                                                               ,[City]
+                                                               ,[State]
+                                                               )
+                                                         VALUES
+                                                               (@CustId 
+                                                               ,@FirstName 
+                                                               ,@LastName 
+                                                               ,@Email 
+                                                               ,@PhoneNumber 
+                                                               ,@Address 
+                                                               ,@City
+                                                               ,@State
+                                                               )", paramItems);
+
+
+
+
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception exec)
             {
-                throw;
+
+                throw exec;
             }
 
         }
+
+        public async Task Addloan(Loan loan, string custId)
+        {
+            try
+            {
+                object[] paramItems = new object[]
+                   {
+                        new SqlParameter("@LoanName", loan.LoanName),
+                        new SqlParameter("@LoanAmount", loan.LoanAmount),
+                        new SqlParameter("@LoanType", loan.LoanType),
+                        new SqlParameter("@LoanNumber", loan.LoandNumber),
+                        new SqlParameter("CustId", custId),
+                        
+                    };
+
+
+            _context.Database.ExecuteSqlRaw(@"INSERT INTO [dbo].[tblLoan]
+                                                       ([LoanNumber]
+                                                       ,[LoanName]
+                                                       ,[LoanType]
+                                                       ,[LoanAmount]
+                                                       ,[CustId]
+                                                     )
+                                                 VALUES
+                                                       (@LoanNumber
+                                                       ,@LoanName
+                                                       ,@LoanType
+                                                       ,@LoanAmount
+                                                       ,@CustId
+                                                     )", paramItems);
+
+
+
+
+        }
+            catch (Exception exec)
+            {
+                
+                throw exec;
+            }
+
+}
 
         public async Task<Customer> GetCustomerById(string customerid)
         {

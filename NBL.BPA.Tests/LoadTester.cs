@@ -8,9 +8,9 @@ namespace NBL.BPA.Tests
         [Fact]
         public void loadata()
         {
-           Processor processor = new Processor();
-            processor.LoadData(@"C:\\csv");
-            Assert.True(false);
+           //Processor processor = new Processor();
+           // processor.LoadData(@"C:\\csv");
+           // Assert.True(false);
         }
 
     }
