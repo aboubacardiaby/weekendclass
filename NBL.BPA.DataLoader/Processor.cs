@@ -1,11 +1,5 @@
 ﻿using NBL.BPA.Data;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NBL.BPA.DataLoader
 {
@@ -28,6 +22,7 @@ namespace NBL.BPA.DataLoader
                 return;
             }
 
+
             if (!Path.IsPathRooted(sourceFileLocation))
             {
 
@@ -44,15 +39,15 @@ namespace NBL.BPA.DataLoader
                 {
                     if (File.Exists(file))
                     {
-                       ds =   CsvDataManagementUtilities.GetDatasetFromCSVFile(file);
+                        ds = CsvDataManagementUtilities.GetDatasetFromCSVFile(file);
                     }
                 }
             }
-            
+
         }
-        public async void Process(byte[] data)
+        public async void Process()
         {
-            
+
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 await _repository.AddCustomer(new Domain.Entities.Customer()
@@ -60,20 +55,21 @@ namespace NBL.BPA.DataLoader
                     CustId = ds.Tables[0].Rows[i]["CustId"].ToString(),
                     Address = ds.Tables[0].Rows[i]["Address"].ToString(),
                     City = ds.Tables[0].Rows[i]["City"].ToString(),
-                   Email = ds.Tables[0].Rows[i]["Email"].ToString(),
-                   FirstName = ds.Tables[0].Rows[i]["FirstName"].ToString()   ,
-                   LastName = ds.Tables[0].Rows[i]["LastName"].ToString(),
-                   PhoneNumber = ds.Tables[0].Rows[i]["PhoneNumber"].ToString(),
-                   State = ds.Tables[0].Rows[i]["State"].ToString()
-                   
-                   
+                    Email = ds.Tables[0].Rows[i]["Email"].ToString(),
+                    FirstName = ds.Tables[0].Rows[i]["FirstName"].ToString(),
+                    LastName = ds.Tables[0].Rows[i]["LastName"].ToString(),
+                    PhoneNumber = ds.Tables[0].Rows[i]["PhoneNumber"].ToString(),
+                    State = ds.Tables[0].Rows[i]["State"].ToString()
+
+
 
                 });
-                await _repository.Addloan(new Domain.Entities.Loan() {
-                LoanAmount = ds.Tables[0].Rows[i]["LoanAmount"].ToString(),
-                LoanName = ds.Tables[0].Rows[i]["LoanName"].ToString(),
-                LoandNumber = ds.Tables[0].Rows[i]["LoandNumber"].ToString(),
-                LoanType= ds.Tables[0].Rows[i]["LoanType"].ToString(),
+                await _repository.Addloan(new Domain.Entities.Loan()
+                {
+                    LoanAmount = ds.Tables[0].Rows[i]["LoanAmount"].ToString(),
+                    LoanName = ds.Tables[0].Rows[i]["LoanName"].ToString(),
+                    LoandNumber = ds.Tables[0].Rows[i]["LoandNumber"].ToString(),
+                    LoanType = ds.Tables[0].Rows[i]["LoanType"].ToString(),
 
 
 

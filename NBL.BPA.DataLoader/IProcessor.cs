@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NBL.BPA.DataLoader
+﻿namespace NBL.BPA.DataLoader
 {
     public interface IProcessor
     {
         public void LoadData(string path);
-        public void Process(byte[] data);
+        public void Process();
     }
 }

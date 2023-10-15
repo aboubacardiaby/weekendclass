@@ -28,8 +28,9 @@ IHostBuilder CreateHostBuilder(string[] strings)
         .ConfigureServices((_, services) =>
         {
             services.AddDbContext<ApplicationDbContext>(
-                                                 dbContextOptions => dbContextOptions.UseSqlServer("Data Source=01PF3R5R5Z;Database=NBLDb;Integrated Security=True;MultipleActiveResultSets=true; Encrypt=False"));
-           // services.AddDbContext<ApplicationDbContext>();
+                                                 dbContextOptions => dbContextOptions.UseSqlServer("Data Source=localhost;Database=NBLDb;Integrated Security=True;MultipleActiveResultSets=true; Encrypt=False"));
+            // services.AddDbContext<ApplicationDbContext>();
+
             services.AddSingleton<IRepository, Repository>();
             services.AddSingleton<IProcessor, Processor>();
             services.AddSingleton<App>();

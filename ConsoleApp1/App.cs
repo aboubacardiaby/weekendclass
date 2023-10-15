@@ -1,11 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using NBL.BPA.Data;
 using NBL.BPA.DataLoader;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
@@ -33,9 +28,9 @@ namespace ConsoleApp1
             Console.WriteLine("Key " + apiSettings.ConnectionStrings);
             Console.WriteLine("Value " + apiSettings.ConValue);
 
-            _processor.LoadData(@"C:\Users\adiaby\source\class\");
-            _processor.Process(new byte[0]);
-           
+            _processor.LoadData(@"C:\project\worker\");
+            _processor.Process();
+
 
             //Console.WriteLine("Hello, World!");
             //Processor processor = new Processor();
