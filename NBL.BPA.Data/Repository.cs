@@ -1,11 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using NBL.BPA.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NBL.BPA.Data
 {
@@ -19,12 +14,14 @@ namespace NBL.BPA.Data
         }
         public async Task AddCustomer(Customer customer)
         {
-
-            try
+            var query = _context.tblCustomer.Find(customer.CustId);
+            if (query == null)
             {
+                try
+                {
 
-                object[] paramItems = new object[]
-                   {
+                    object[] paramItems = new object[]
+                       {
                         new SqlParameter("@CustId", customer.CustId),
                         new SqlParameter("@FirstName", customer.FirstName),
                         new SqlParameter("@LastName", customer.LastName),
@@ -33,10 +30,9 @@ namespace NBL.BPA.Data
                         new SqlParameter("@Address", customer.Address),
                         new SqlParameter("@City", customer.City),
                         new SqlParameter("@State", customer.State),
-                    };
+                        };
 
-
-                _context.Database.ExecuteSqlRaw(@"INSERT INTO tblCustomer
+                    _context.Database.ExecuteSqlRaw(@"INSERT INTO tblCustomer
                                                                ([CustId]
                                                                ,[FirstName]
                                                                ,[LastName]
@@ -60,17 +56,20 @@ namespace NBL.BPA.Data
 
 
 
-            }
-            catch (Exception exec)
-            {
+                }
+                catch (Exception exec)
+                {
 
-                throw exec;
+                    throw exec;
+                }
             }
+
 
         }
 
         public async Task Addloan(Loan loan, string custId)
         {
+
             try
             {
                 object[] paramItems = new object[]
@@ -78,13 +77,13 @@ namespace NBL.BPA.Data
                         new SqlParameter("@LoanName", loan.LoanName),
                         new SqlParameter("@LoanAmount", loan.LoanAmount),
                         new SqlParameter("@LoanType", loan.LoanType),
-                        new SqlParameter("@LoanNumber", loan.LoandNumber),
+                        new SqlParameter("@LoanNumber", loan.LoanNumber),
                         new SqlParameter("CustId", custId),
-                        
+
                     };
 
 
-            _context.Database.ExecuteSqlRaw(@"INSERT INTO [dbo].[tblLoan]
+                _context.Database.ExecuteSqlRaw(@"INSERT INTO [dbo].[tblLoan]
                                                        ([LoanNumber]
                                                        ,[LoanName]
                                                        ,[LoanType]
@@ -102,42 +101,28 @@ namespace NBL.BPA.Data
 
 
 
-        }
+            }
             catch (Exception exec)
             {
-                
-                throw exec;
+
+
             }
 
-}
 
-        public async Task<Customer> GetCustomerById(string customerid)
-        {
 
-            var customer = await _context.tblCustomer.FindAsync(customerid);
-            return customer;
+
         }
 
-        public async Task<Customer> GetCustomerDetails(string customerid)
+        public async Task AddLogger(Logger logger)
         {
-            var customer = await _context.tblCustomer.FirstOrDefaultAsync(m => m.CustId == customerid);
-            if (customer == null)
-            {
-                return null;
-            }
-            return customer;
+            _context.tblLogger.Add(logger);
+            _context.SaveChanges();
         }
-        public List<Customer> GetCustomers()
+        public async Task UpdateLogger(Logger logger)
         {
-            var customers = _context?.tblCustomer?.FromSqlRaw<Customer>($"Usp_GetAllCustomer").ToList();
-            return _context.tblCustomer.ToList();
+            _context.tblLogger.Update(logger);
+            _context.SaveChanges();
         }
-        #region Loan Repos
-        public async Task<Loan> GetLoanInfobyCustomerAsync(string customerid)
-        {
-            return null;
-            //return _context.tblCustomer.
-        }
-        #endregion
+
     }
 }

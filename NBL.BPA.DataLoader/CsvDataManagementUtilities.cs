@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace NBL.BPA.DataLoader
 {
@@ -28,11 +23,13 @@ namespace NBL.BPA.DataLoader
                         datecolumn.AllowDBNull = true;
                         csvData.Columns.Add(datecolumn);
                     }
-
+                    csvData.Columns.Add("path");
                     while (!csvReader.EndOfData)
                     {
                         string[] fieldData = csvReader.ReadFields();
-                        //Making empty value as null
+                        var fieldDatalist = fieldData.ToList();
+                        fieldDatalist.Add(csv_file_path);
+                        fieldData = fieldDatalist.ToArray();
                         for (int i = 0; i < fieldData.Length; i++)
                         {
                             if (fieldData[i] == "")
@@ -40,7 +37,12 @@ namespace NBL.BPA.DataLoader
                                 fieldData[i] = null;
                             }
                         }
-                        csvData.Rows.Add(fieldData);
+                        if (!string.IsNullOrEmpty(fieldData[0]))
+                        {
+                            csvData.Rows.Add(fieldData);
+                        }
+
+
                     }
                 }
             }

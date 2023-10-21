@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ConsoleApp1": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\project\\worker\\"
+    },
+    "Profile 1": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\project\\worker\\"
+    }
+  }
+}
