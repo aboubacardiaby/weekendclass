@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NBL.BPA.Domain.Entities
+﻿namespace NBL.BPA.Domain.Entities
 {
-    public class Payment : BaseEntity
+    public partial class Payment : BaseEntity
     {
         public string LoanNumber { get; set; }
         public DateTime DueDate { get; set; }

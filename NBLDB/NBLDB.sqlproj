@@ -61,5 +61,12 @@
     <Build Include="tblCustomer.sql" />
     <Build Include="tblLoan.sql" />
     <Build Include="tblPayment.sql" />
+    <Build Include="tblLogger.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="InsertTableData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>
